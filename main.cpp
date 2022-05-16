@@ -86,7 +86,7 @@ int main() {
 
     vector<int> vec;
     int num;
-    for(int i = 0; i < 8; i++) {
+    for(int i = 0; i < 9; i++) {
         cin >> num;
         vec.push_back(num);
     }
