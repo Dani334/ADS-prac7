@@ -11,6 +11,8 @@ class QuickSort : public Sort {
         std::vector<int> sort(std::vector<int> list);
 
     private:
+        std::vector<int> sortHelper(std::vector<int> list, int start, int end);
         std::vector<int> less, greater;
+
 };
 #endif

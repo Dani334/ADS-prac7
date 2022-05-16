@@ -11,26 +11,26 @@ using namespace std;
 
 int main() {
 
-    BubbleSort bubbleSort = BubbleSort();
+    // BubbleSort bubbleSort = BubbleSort();
 
-    vector<int> vec1;
-    vec1.push_back(5);
-    vec1.push_back(1);
-    vec1.push_back(4);
-    vec1.push_back(2);
-    vec1.push_back(8);
+    // vector<int> vec1;
+    // vec1.push_back(5);
+    // vec1.push_back(1);
+    // vec1.push_back(4);
+    // vec1.push_back(2);
+    // vec1.push_back(8);
 
-    for(int i = 0; i < vec1.size(); i++) {
-        cout << vec1.at(i) << " ";
-    }
-    cout << endl;
+    // for(int i = 0; i < vec1.size(); i++) {
+    //     cout << vec1.at(i) << " ";
+    // }
+    // cout << endl;
 
-    vec1 = bubbleSort.sort(vec1);
+    // vec1 = bubbleSort.sort(vec1);
 
-    for(int i = 0; i < vec1.size(); i++) {
-        cout << vec1.at(i) << " ";
-    }
-    cout << endl;
+    // for(int i = 0; i < vec1.size(); i++) {
+    //     cout << vec1.at(i) << " ";
+    // }
+    // cout << endl;
 
     // QuickSort quickSort = QuickSort();
 
@@ -53,20 +53,57 @@ int main() {
     // }
     // cout << endl;
 
-    RecursiveBinarySearch recursive = RecursiveBinarySearch();
-    vector<int> vec3;
-    vec3.push_back(1);
-    vec3.push_back(2);
-    vec3.push_back(3);
-    vec3.push_back(4);
-    vec3.push_back(5);
-    vec3.push_back(6);
-    cout << recursive.search(vec3, 1) << endl;
-    cout << recursive.search(vec3, 2) << endl;
-    cout << recursive.search(vec3, 3) << endl;
-    cout << recursive.search(vec3, 4) << endl;
-    cout << recursive.search(vec3, 5) << endl;
-    cout << recursive.search(vec3, 6) << endl;
-    cout << recursive.search(vec3, 7) << endl; 
+    // RecursiveBinarySearch recursive = RecursiveBinarySearch();
+    // vector<int> vec3;
+    // vec3.push_back(-5);
+    // vec3.push_back(3);
+    // vec3.push_back(4);
+    // vec3.push_back(5);
+    // vec3.push_back(6);
+    // vec3.push_back(6);
+    // vec3.push_back(7);
+    // cout << recursive.search(vec3, 1) << endl;
+    // cout << recursive.search(vec3, 2) << endl;
+    // cout << recursive.search(vec3, 3) << endl;
+    // cout << recursive.search(vec3, 4) << endl;
+    // cout << recursive.search(vec3, 5) << endl;
+    // cout << recursive.search(vec3, 6) << endl;
+    // cout << recursive.search(vec3, 7) << endl; 
+
+
+
+
+
+
+
+
+
+
+
+    QuickSort quickSort = QuickSort();
+    BubbleSort bubbleSort = BubbleSort();
+    RecursiveBinarySearch recursiveBinarySearch = RecursiveBinarySearch();
+
+    vector<int> vec;
+    int num;
+    for(int i = 0; i < 8; i++) {
+        cin >> num;
+        vec.push_back(num);
+    }
+
+    // vec = quickSort.sort(vec);
+    vec = bubbleSort.sort(vec);
+    bool isOne = recursiveBinarySearch.search(vec, 1);
+
+    if(isOne) {
+        cout << "true "; 
+    } else {
+        cout << "false ";
+    }
+    
+    for(int i = 0; i < vec.size(); i++) {
+        cout << vec.at(i) << " ";
+    }
+    cout << endl;
 
 }

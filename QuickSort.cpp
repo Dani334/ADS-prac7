@@ -6,44 +6,44 @@
 
 std::vector<int> QuickSort::sort(std::vector<int> list) {
 
-    if(list.size() < 2) {
+    list = sortHelper(list, 0, list.size()-1);
+    return list;
+}
+
+
+std::vector<int> QuickSort::sortHelper(std::vector<int> list, int start, int end) {
+
+    if(start >= end || start < 0) {
         return list;
     }
 
-    // for(int i = 0; i < list.size(); i++) {
-    //     std::cout << list.at(i) << " ";
-    // }
-    // std::cout << std::endl;
-
     int pivot;
 
-    if(list.size() > 2) {
+    if(list.size() >= 3) {
         pivot = list.at(2);
-        list.erase(list.begin() + 2);
     } else {
-        pivot = list.at(0);
-        list.erase(list.begin());
+        pivot = list.at(end/2);
     }
 
-    for(int i = 0; i < list.size(); i++) {
-        if(list.at(i) < pivot) {
-            less.push_back(list.at(i));
-        } else {
-            greater.push_back(list.at(i));
+    int i = start - 1;
+
+    for(int j = start; j <= end - 1; j++) {
+        if(list.at(j) <= pivot) {
+            i++;
+            int temp = list.at(j);
+            list.at(j) = list.at(i);
+            list.at(i) = temp;
         }
     }
-
-    sort(less);
-    sort(greater);
-
-    // less.push_back(pivot);
-    // for(int i = 0; i < greater.size(); i++) {
-    //     less.push_back(greater.at(i));
-    // }
-
-    return list;
-
     
+    i++;
+    int temp = list.at(i);
+    list.at(i) = list.at(end);
+    list.at(end) = temp;
 
+    less = sortHelper(list, start, i - 1);
+    greater = sortHelper(list, i + 1, end);
+
+    return greater;
 
 }
