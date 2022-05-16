@@ -6,6 +6,8 @@
 
 #include <vector>
 #include <iostream>
+#include <string>
+#include <sstream>
 
 using namespace std;
 
@@ -85,10 +87,13 @@ int main() {
     RecursiveBinarySearch recursiveBinarySearch = RecursiveBinarySearch();
 
     vector<int> vec;
-    int num;
-    for(int i = 0; i < 9; i++) {
-        cin >> num;
-        vec.push_back(num);
+    string s;
+
+    getline(cin, s);
+    stringstream ss(s);
+
+    for(int i; ss >> i;) {
+        vec.push_back(i);
     }
 
     // vec = quickSort.sort(vec);
